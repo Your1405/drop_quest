@@ -2,9 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/parser.dart';
 
-import 'svg_renderer.dart';
 import 'constants.dart';
 
 var constants = DropQuestConstants();
@@ -19,16 +17,6 @@ class HomepageScreen extends StatefulWidget {
 class _HomepageScreenState extends State<HomepageScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    List<String> categories = [
-      'Math',
-      'Biology',
-      'Economics',
-      'Geography',
-      'Physics',
-      'Science'
-    ];
-
     AppBar _buildAppBar() {
       return AppBar(
         leading: IconButton(
@@ -131,29 +119,114 @@ class _HomepageScreenState extends State<HomepageScreen> {
       );
     }
 
-    Container _buildCategoryRows(List categories) {
-      for (String category in categories) {
-        return Container(
-          child: Column(children: [
-            IconButton(
-              onPressed: () {},
-              icon:
-                  SvgPicture.asset('categories/${category.toLowerCase()}.svg'),
-              iconSize: 48,
-            ),
-            Container(
-                child: RichText(
-              text: TextSpan(
-                  text: category,
-                  style: TextStyle(
-                      color: Color(constants.black2),
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w700)),
-            ))
-          ]),
-          margin: EdgeInsets.only(left: 24),
-        );
-      }
+    Container _buildMathButton() {
+      return Container(
+        child: Column(children: [
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset('categories/math.svg'),
+            iconSize: 48,
+          ),
+          Container(
+              child: RichText(
+            text: TextSpan(
+                text: 'Math',
+                style: TextStyle(
+                    color: Color(constants.black2),
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w700)),
+          ))
+        ]),
+        margin: EdgeInsets.only(left: 24),
+      );
+    }
+
+    Container _buildPhysicsButton() {
+      return Container(
+        child: Column(children: [
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset('categories/physics.svg'),
+            iconSize: 48,
+          ),
+          Container(
+              child: RichText(
+            text: TextSpan(
+                text: 'Physics',
+                style: TextStyle(
+                    color: Color(constants.black2),
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w700)),
+          ))
+        ]),
+        margin: EdgeInsets.only(left: 24),
+      );
+    }
+
+    Container _buildBiologyButton() {
+      return Container(
+        child: Column(children: [
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset('categories/biology.svg'),
+            iconSize: 48,
+          ),
+          Container(
+              child: RichText(
+            text: TextSpan(
+                text: 'Biology',
+                style: TextStyle(
+                    color: Color(constants.black2),
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w700)),
+          ))
+        ]),
+        margin: EdgeInsets.only(left: 24),
+      );
+    }
+
+    Container _buildGeographyButton() {
+      return Container(
+        child: Column(children: [
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset('categories/geography.svg'),
+            iconSize: 48,
+          ),
+          Container(
+              child: RichText(
+            text: TextSpan(
+                text: 'Geography',
+                style: TextStyle(
+                    color: Color(constants.black2),
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w700)),
+          ))
+        ]),
+        margin: EdgeInsets.only(left: 24),
+      );
+    }
+
+    Container _buildScienceButton() {
+      return Container(
+        child: Column(children: [
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset('categories/science.svg'),
+            iconSize: 48,
+          ),
+          Container(
+              child: RichText(
+            text: TextSpan(
+                text: 'Science',
+                style: TextStyle(
+                    color: Color(constants.black2),
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w700)),
+          ))
+        ]),
+        margin: EdgeInsets.only(left: 24),
+      );
     }
 
     return Scaffold(
@@ -197,7 +270,13 @@ class _HomepageScreenState extends State<HomepageScreen> {
             height: 30,
           ),
           Row(
-            children: [_buildCategoryRows(categories)],
+            children: [
+              _buildMathButton(),
+              _buildPhysicsButton(),
+              _buildBiologyButton(),
+              _buildGeographyButton(),
+              _buildScienceButton()
+            ],
           )
         ],
       ),
