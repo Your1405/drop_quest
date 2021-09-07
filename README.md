@@ -7,8 +7,10 @@ Drop Quest is a STEM education application created by Team Suriname and Team Cam
 # Installation guide
 
 ## Prequisites:
+```
 - Flutter sdk version 2.2.3 or higher
 - Android Studio (For android development)
-AND/OR
+    AND/OR
 - XCode (For iOS development)
 - Android toolchain
+```
