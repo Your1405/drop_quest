@@ -159,7 +159,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     fontWeight: FontWeight.w700)),
           ))
         ]),
-        margin: EdgeInsets.only(left: 24),
+        //margin: EdgeInsets.only(left: 24),
       );
     }
 
@@ -181,7 +181,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     fontWeight: FontWeight.w700)),
           ))
         ]),
-        margin: EdgeInsets.only(left: 24),
+        //margin: EdgeInsets.only(left: 24),
       );
     }
 
@@ -203,7 +203,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     fontWeight: FontWeight.w700)),
           ))
         ]),
-        margin: EdgeInsets.only(left: 24),
+        //margin: EdgeInsets.only(left: 24),
       );
     }
 
@@ -225,7 +225,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     fontWeight: FontWeight.w700)),
           ))
         ]),
-        margin: EdgeInsets.only(left: 24),
+        margin: EdgeInsets.only(right: 24),
       );
     }
 
@@ -270,14 +270,43 @@ class _HomepageScreenState extends State<HomepageScreen> {
             height: 30,
           ),
           Row(
-            children: [
+            children: <Widget>[
               _buildMathButton(),
               _buildPhysicsButton(),
               _buildBiologyButton(),
               _buildGeographyButton(),
               _buildScienceButton()
             ],
-          )
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          ),
+          SizedBox(height: 30),
+          Container(
+            child: Row(children: [
+              RichText(
+                  text: TextSpan(
+                      text: 'Physics',
+                      style: TextStyle(
+                          color: Color(constants.black),
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700))),
+            ]),
+            margin: EdgeInsets.only(left: 24),
+          ),
+          Container(
+            child: Row(
+              children: [
+                RichText(
+                    text: TextSpan(
+                        text: 'Progress of all of the levels you have played!',
+                        style: TextStyle(
+                            color: Color(constants.black2),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500)))
+              ],
+            ),
+            margin: EdgeInsets.only(left: 24),
+          ),
+          SizedBox(height: 20)
         ],
       ),
     );
