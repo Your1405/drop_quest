@@ -230,85 +230,87 @@ class _HomepageScreenState extends State<HomepageScreen> {
     }
 
     return Scaffold(
-      backgroundColor: Color(constants.white1),
-      appBar: _buildAppBar(),
-      body: Column(
-        children: [
-          _buildSearchBar(),
-          SizedBox(
-            height: 30,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        backgroundColor: Color(constants.white1),
+        appBar: _buildAppBar(),
+        body: Container(
+          child: Column(
             children: [
+              _buildSearchBar(),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: RichText(
+                        text: TextSpan(
+                            text: 'Categories',
+                            style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: Color(constants.black2)))),
+                    margin: EdgeInsets.only(left: 25),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(right: 25),
+                    child: RichText(
+                        text: TextSpan(
+                            text: 'See all',
+                            style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: Color(constants.secondaryColor)),
+                            recognizer: TapGestureRecognizer()..onTap = () {})),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: <Widget>[
+                  _buildMathButton(),
+                  _buildPhysicsButton(),
+                  _buildBiologyButton(),
+                  _buildGeographyButton(),
+                  _buildScienceButton()
+                ],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ),
+              SizedBox(height: 30),
               Container(
-                child: RichText(
-                    text: TextSpan(
-                        text: 'Categories',
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: Color(constants.black2)))),
-                margin: EdgeInsets.only(left: 25),
+                child: Row(children: [
+                  RichText(
+                      text: TextSpan(
+                          text: 'Physics',
+                          style: TextStyle(
+                              color: Color(constants.black),
+                              fontSize: 25,
+                              fontWeight: FontWeight.w700))),
+                ]),
+                margin: EdgeInsets.only(left: 24),
               ),
               Container(
-                margin: EdgeInsets.only(right: 25),
-                child: RichText(
-                    text: TextSpan(
-                        text: 'See all',
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700,
-                            color: Color(constants.secondaryColor)),
-                        recognizer: TapGestureRecognizer()..onTap = () {})),
-              )
+                child: Row(
+                  children: [
+                    RichText(
+                        text: TextSpan(
+                            text:
+                                'Progress of all of the levels you have played!',
+                            style: TextStyle(
+                                color: Color(constants.black2),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500)))
+                  ],
+                ),
+                margin: EdgeInsets.only(left: 24),
+              ),
+              SizedBox(height: 20)
             ],
           ),
-          SizedBox(
-            height: 30,
-          ),
-          Row(
-            children: <Widget>[
-              _buildMathButton(),
-              _buildPhysicsButton(),
-              _buildBiologyButton(),
-              _buildGeographyButton(),
-              _buildScienceButton()
-            ],
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          ),
-          SizedBox(height: 30),
-          Container(
-            child: Row(children: [
-              RichText(
-                  text: TextSpan(
-                      text: 'Physics',
-                      style: TextStyle(
-                          color: Color(constants.black),
-                          fontSize: 25,
-                          fontWeight: FontWeight.w700))),
-            ]),
-            margin: EdgeInsets.only(left: 24),
-          ),
-          Container(
-            child: Row(
-              children: [
-                RichText(
-                    text: TextSpan(
-                        text: 'Progress of all of the levels you have played!',
-                        style: TextStyle(
-                            color: Color(constants.black2),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500)))
-              ],
-            ),
-            margin: EdgeInsets.only(left: 24),
-          ),
-          SizedBox(height: 20)
-        ],
-      ),
-    );
+        ));
   }
 }
